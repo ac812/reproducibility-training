@@ -666,13 +666,11 @@ euro_data_tbl %>%
 
 >##### Challenge 
 >
->1. Our table is getting prettier.  Try a few styles with `kable_styling()`. Look at the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Table_Styles) for ideas. After you have tried a few styles, set your R Markdown file to look like [this](RMarkdownExample1.Rmd)
+>1. Our table is getting prettier.  Try a few styles with `kable_styling()`. Look at the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Table_Styles) for ideas. After you have tried a few styles, set your R Markdown file to look like [this](RNotebookxample1.Rmd)
 >
 >2. Experiment using the different chunk options and see what the output will be link with each option.  Refer to [chunk options section](#chunk-options).
 >
-> \
->
-> [Link to Answer](RNotebookExample1.Rmd)
+
 
 \  
 

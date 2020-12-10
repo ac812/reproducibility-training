@@ -1,13 +1,18 @@
 ---
+title: "R Markdown" 
+author: "Alexia Cardona"
 bibliography: references.bib
 link-citations: yes
 output:
   html_document: 
+    highlight: pygments
     toc: true
     toc_float:
       collapsed: true
     toc_depth: 6
 ---
+
+<br/>
 
 # RStudio
 
@@ -119,7 +124,7 @@ An Rmarkdown file is made up of 3 basic components:
 In this course we will assume that the output of our report is an .html file.  HTML files are files for web pages.  This means that the report that we will generate can be easily deployed on the web.  
 
   
-## Rmarkdown header
+## Header
 
 The markdown document starts with an optional header in YAML format known as the YAML metadata.  In the example below the title, author and date are specified in the header.  Other options can be specified in the header such as table of content which we will look at later on in the course.  
 
@@ -177,12 +182,37 @@ To make text ~subscript~ use `~tilde~`.
 To mark text as `inline code` use `` `backticks` ``.   
 To  ~~strikethrough~~ text use `~~double tilde~~`.
 
-\
+\  
 
 ### Line breaks
 To create a line break, put more than 2 spaces at the end of a sentence or place `\` in a new line followed by a new line <img src="img/enter.png" width="20"/>.  
 
-\
+\  
+
+>### Challenge
+>Replicate the output of the text below in Rmarkdown.
+>The text comes from [a paper by Monya Baker](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970) that was published in 2016 in the Nature journal that triggered the discussion about Reproducibility Crisis.
+!['](img/Exercise1.png)
+> <details>
+> <summary>Show Answer</summary>
+>```
+>---
+>title: "1,500 scientists lift the lid on reproducibility"
+>author:  Monya Baker
+>date: 25 May 2016
+>---
+>\
+>
+>## Survey sheds light on the 'crisis' rocking research.
+>
+>**More than 70% of researchers have tried and failed to reproduce another scientist's experiments**, and more than half have failed to reproduce their own experiments. Those are some of the telling figures that emerged from *Nature*'s survey of 1,576 researchers who took a brief online questionnaire on reproducibility in research.
+>
+>The data reveal sometimes-contradictory attitudes towards reproducibility. Although 52% of those surveyed agree that there is a significant 'crisis' of reproducibility, less than 31% think that failure to reproduce published results means that the result is probably wrong, and most say that they still trust the published literature.
+>```
+> </details>
+>
+
+\  
 
 ### Links
 
@@ -320,6 +350,52 @@ Will be rendered as:
 
 \
 
+>### Challenge
+>Continue working on the example we created in Challenge 1 to extend it to an output that is similar to [this](example2.html).
+> <details>
+> <summary>Show Answer</summary>
+>```
+>---
+>title: "1,500 scientists lift the lid on reproducibility"
+>author:  Monya Baker
+>date: 25 May 2016
+>---
+>\
+>
+>## Reproducibilty Crisis
+>
+>**More than 70% of researchers have tried and failed to reproduce another scientist's experiments**, and more than half have failed to reproduce their own experiments. Those are some of the telling figures that emerged from *Nature*'s survey of 1,576 researchers who took a brief online questionnaire on reproducibility in research.
+>
+>The data reveal sometimes-contradictory attitudes towards reproducibility. Although 52% of those surveyed agree that there is a significant 'crisis' of reproducibility, less than 31% think that failure to reproduce published results means that the result is probably wrong, and most say that they still trust the published literature.
+>
+>![](https://www.nature.com/news/polopoly_fs/7.36716.1469695923!/image/reproducibility-graphic-online1.jpeg_gen/derivatives/landscape_630/reproducibility-graphic-online1.jpeg)
+>
+>\  
+>
+>### The Survey
+>
+>In the survey [^1] respondents were asked to rate 11 different approaches to improving reproducibilty in science.  Below is the list order by the most highly rated:
+>
+>* Better understanding of statistics
+>* Better mentoring/supervision
+>* More robust design
+>* Better teaching
+>* More within-lab validation
+>* Incentives for better practice
+>* Incentives for formal reproduction
+>* More external-lab validation
+>* More time for mentoring
+>* Journals enforcing standards
+>* More time checking notebooks
+>
+>[^1]: The survey can be downloaded [here](https://www.nature.com/news/polopoly_fs/7.36741!/file/Reproduciblility%20Questionnaire.doc).
+>
+>```
+> </details>
+>
+
+\  
+
 ### Tables {#tables}
 
 Use `|`and `-` to create a table as follows:
@@ -441,32 +517,29 @@ See https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html fo
 
 \
 
-## R code chunks
 
-So far we have not used any R code and all the code we used so far is in Markdown.  As the name suggests, Rmarkdown files contain markdown and R.  Rmarkdown files have a `.Rmd` extention.  Using R in a markdown document makes sense if we integrate our analysis in our report. Some operations that we might need to do are; loading our dataset, performing some operations on the dataset and displaying results, either in a table or in a plot.  We will be doing all this in the following sections.
 
-If you would like to insert R code inside the notebook you will have to insert it inside an R code chunk to be able to execute it.  To do this either click on the `Insert` button at the top of the Source panel in RStudio:
+## Inserting R Code in Markdown
 
-<img src="img/insert-r-chunk.png" width=150/>
+So far we have not used any R code and all the code we used so far is in Markdown.  As the name suggests, R Markdown files contain Markdown and R.  R Markdown files have a `.Rmd` extension.  Using R in a Markdown document is useful if we want dynamically generated information such as integrating our analysis in our report. Some operations that we might need to do are; loading our dataset, performing some operations on the dataset and displaying results, either in a table or in a plot.  We will be exploring how we can integrate R code in R Markdown in the following worked example.
 
-This creates an **R code chunk** as follows:
-![](img/r-chunk.png)
-
-Alternatively, you can type the r code chunk.  The R code should be placed in between the triple backticks.  Note that on the right hand side of the R code chunk there is a green "play" button that will run the R code chunk if pressed.  By default, when the Rmarkdown document is knitted, the R code will be executed and the R code chunk is displayed before the executed code.  
-
-[Click here](RNotebookExample.Rmd) for an example of an R Notebook.  The sections below will go over the differet parts of the R Notebook.  Add RNotebookExample.Rmd to your existing R project.  
+>1. Create a  new R Markdown document (`File` -> `New File` -> `R Markdown` )
+>2. The file created should already contain some RMarkdown code and it should look like this:
+>![](img/RMarkdown1.png)
+>3. Delete the existing code leaving only the RMarkdown header so that we can start building our code as we go over the worked example.  
+>4. Name your R Markdown document as RNotebookExample.Rmd
 
 \  
 
 ### The dataset
 
-[RNotebookExample.Rmd](RNotebookExample.Rmd) uses data from [gapminder](https://www.gapminder.org/).  Let us download the `gapminder_data.csv` dataset into our project.  Create a `data` folder in your working directory.  Download the dataset into the `data` folder as follows:
+Our worked example uses data from [gapminder](https://www.gapminder.org/).  Let us download the `gapminder_data.csv` dataset into our project.  Create a `data` folder in your working directory.  Download the dataset into the `data` folder as follows:
 
 ```
 download.file(url="https://raw.githubusercontent.com/cambiotraining/reproducibility-training/master/data/gapminder_data.csv", destfile="data/gapminder_data.csv")
 ```
 
-The `gapminder_data.csv` dataset that is loaded into the notebook contains the life expectancy and GDP per capita  data for each country per year from 1952 to 2007.  The dataset has the following columns:  
+The `gapminder_data.csv` dataset that is loaded into the notebook contains the life expectancy and GDP per capita data for each country per year from 1952 to 2007.  The dataset has the following columns:  
 
 | Column           | Description                                               |
 |------------------|-----------------------------------------------------------|
@@ -481,7 +554,21 @@ The dataset contains data for different countries in the world.  For our analysi
 
 \  
 
-### Chunk options
+### R code chunks
+
+To be able to insert R code inside a notebook you will have to insert it inside an R code chunk to be able to execute it.  To do this either click on the `Insert` button at the top of the Source panel in RStudio:
+
+<img src="img/insert-r-chunk.png" width=150/>
+
+This creates an **R code chunk** as follows:
+
+![](img/r-chunk.png)
+
+Alternatively, you can type the r code chunk.  The R code should be placed in between the triple backticks.  Note that on the right hand side of the R code chunk there is a green "play" button that will run the R code chunk if pressed.  By default, when the R Markdown document is knitted, the R code will be executed and the R code chunk is displayed before the executed code.  
+
+\  
+
+### Chunk options {#chunk-options}
 
 As mentioned, by default the chunk output will be displayed exactly after the R code chunk and the R code chunk is also displayed in the rendered page.  If you would like to have different settings, you can specify these as arguments in the `{}` part of the R code chunk.
 
@@ -494,26 +581,144 @@ These chunk options include:
 
 A full list of options that can be used in the R code chunks is found [here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
+\  
+
+### Chunk label
+
+Most likely you will specify several R code chunks in your RMarkdown file.  It is recommended practice to label each R code chunk.  This will also help navigating your code easily.  At the bottom right of your RStudio you should see the code navigator where you can navigate the different code chunks:
+
+![](img/chunk-menu.png)
+
+To label your chunk just add a label next to `r` in your R code chunk as follows:
+
+````markdown
+`r ''````{r label-name}
+```
+````
+
+For our worked example, create an R code chunk and name it as `load-data` and add the following code into your first chunk:
+````markdown
+`r ''````{r load-data}
+#load tidyverse library
+library(tidyverse) # used for data manipulation
+library(rmarkdown) # used for paged_table function
+library(kableExtra) # used for table
+library(ggpubr) #used for ggarrange function 
+
+#read file into R
+pop_data <- read_csv("data/gapminder_data.csv")
+
+#create a table with data from European countries in 2007 showing the countries 
+#with the largest life expectancy at the top 
+euro_data_tbl <- pop_data %>% 
+                    filter(continent == "Europe" & year == 2007) %>% 
+                    select(-continent, -year) %>% 
+                    arrange(desc(lifeExp)) %>% 
+                    rename(Country = country, "Population Size" = pop, 
+                      "Life Expectancy" = lifeExp, "GDP" = gdpPercap)
+    
+```
+````
+
+We will look at some functions present in the `rmarkdown` and `kableExtra` packages later on.  Knit the `RNotebookExample.Rmd` file and see what happens.  You may notice that both the code and the output that you would expect to be printed in the console when you run the code are printed in the notebook.  We would like to have only the code printed in the notebook.  To do that we need to specify the `message=FALSE` as the chunk option for our `load-data` chunk as discussed previously in the [chunk options section](#chunk-options).  
+
+````markdown
+`r ''````{r load-data, message=FALSE}
+````
+If you knit `RNotebookExample.Rmd` again you will see that now only the code is being printed, which is what we wanted.  In the `load-data` R code chunk, we have loaded the packages we will be using in our report and also the data we will be working with.  We then filtered our dataset to contain data from only European countries in 2007 ordered by life expectancy.  The next step is to display this filtered dataset that is saved in the variable `eur_data_tbl` in a table.  
+
 \
 
 ### Tables in Rmarkdown
 
-When you have a large dataset, creating a table manually in rmarkdown as we did [here](#tables) is not really feasible.  Also if you are really trying to make your research reproducible, then, you will need to generate most of the tables dynamically and therefore you will not be able to manually type them in markdown.  This is where Rmarkdown comes in as there is a way to display tables dynamically.  In [RNotebookExample.Rmd](RNotebookExample.Rmd), the data was first loaded and then after some manipulation, the table was displayed by using the `kable` function and passing in the table variable as its argument. More information about `kable` can be found in its [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html).
+When you have a large dataset, creating a table manually in R Markdown as we did [here](#tables) is not really feasible.  Also if you are really trying to make your research reproducible, then, you will need to generate most of the tables dynamically and therefore you will not be able to manually type them in markdown.  This is where R Markdown comes in as there is a way to display tables dynamically. In this course we will look at two ways of displaying tables dynamically, using the functions:
 
-If you have a very long table to display, the best way would be to use pagination where the contents of the table are split into multiple tabs.  The function `paged_table` in the `rmarkdown` library can be used to do this (see example in [RNotebookExample.Rmd](RNotebookExample.Rmd)).
+1. `kbl()`
+2. `paged_table()`
 
 \  
+
+#### `kbl()`
+The function `kbl()` is present in the package `kableExtra`, a popular package to display tables in R Markdown.  There is extensive documentation on how you can use the functions within the `kableExtra` package to draw tables [here](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) which has good examples on how to change the different settings of a table, such as font, width, highlights, *etc...*
+
+As a first step, to draw a table you need to use the function `kbl()`.  The `kbl()` function takes as an input the dataset you want to display in a table, *e.g., * `kbl(euro_data_tbl)`.
+
+
+We have already loaded the package `kableExtra` in the `load-data` R code chunk.  Create a new R code chunk called `kbl-table` and draw the a table with the `eur_data_tbl` tibble.  
+````markdown
+`r ''````{r kbl}
+euro_data_tbl %>% 
+          kbl()
+```
+````
+
+Let us add a style to the table so that it looks more attractive.  The `kable_styling()` function is the function used to customise the way the table looks.  We are going to add the `striped` style so that the table have striped rows and also the `hover` style so that when you move your mouse over the table you can see it hover.  
+
+````markdown
+`r ''````{r kbl}
+euro_data_tbl %>% 
+          kbl() %>%
+          kable_styling(bootstrap_options = c("striped", "hover")) %>% 
+```
+
+````
+\  
+
+>##### Challenge 
+>
+>1. Our table is getting prettier.  Try a few styles with `kable_styling()`. Look at the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Table_Styles) for ideas. After you have tried a few styles, set your R Markdown file to look like [this](RMarkdownExample1.Rmd)
+>
+>2. Experiment using the different chunk options and see what the output will be link with each option.  Refer to [chunk options section](#chunk-options).
+>
+> \
+>
+> [Link to Answer](RNotebookExample1.Rmd)
+
+\  
+
+#### `paged_table()`
+
+If you have a very long table to display, the best way would be to use pagination where the contents of the table are split into multiple tabs.  The function `paged_table` in the `rmarkdown` library can be used to do this.  It is also very simple to use.  
+
+Create a new R code chunk called `paged-table` and use the `paged_table()` function to display the euro_data_tbl table as follows:
+
+````markdown
+`r ''````{r paged-table}
+paged_table(euro_data_tbl)
+```
+````
+
+\    
+
+### Adding images
+
+Adding images is straightforward and does not require using a specific R Markdown function.
+
+>#### Challenge
+>
+>Create a new dataset `euro_data_fig` by filtering the `pop_data` tibble to contain only data from Europe.  Draw a plot to display the `lifeExp` on the y axis and `year` on the x axis.  Use `geom_violin()` to draw this as a violin plot to show the distrubution of the data across each year and save it in a 1euro_plot` variable.   
+>
+>\  
+>
+>[Link to Answer](RMarkdownExample3.Rmd)
+
+\  
+
+In reports or publications, sometimes you would need to place two or more figures next to each other.  `ggarrage()` is a function present in the `ggpubr` pacakge that can help with this.  The `ggarrange()` function takes as an input the list of plots to plot.  You can specify the number of columns and rows to plot by the ncol and nrow arguments respectively.  Another thing that you might need is a lable for each plot so that you can specify the description in your caption.  Use the labels argument to specify labels.  
+
+
+### Challenge
+> Create a new dataset `uk_data_fig` by filtering the `pop_data` tibble to contain only data from the United Kingdom.  Draw a scatter plot to display the `lifeExp` on the y axis and `year` on the x axis and save it in a `uk_plot` variable.  
+> Draw the `euro_plot` created in the previous challenge next to a `uk_plot` using the `ggarrange()` function.  Label the plots A and B respectively.  
+>
+>\
+>[Link to Answer](RMarkdownExample4.Rmd)
+
+
 
 # Summary
 
 Through R notebooks we can now integrate our R code and our results in one readable document that we can share with our collaborators.  In this way the code and the results have become one item. For inspiration, examples of R notebooks can be found at https://rpubs.com/
-
-**Limitations:**
-
-Some limitations that Rmarkdown has:
-
-* Figure and table numbering is not supported.  There is still a way around this, by using third-party packages *e.g.,* [captioner](https://cran.r-project.org/web/packages/captioner/vignettes/using_captioner.html).
-*  If you are looking at specific customisations that are different from the default Markdown format, *e.g.,* headings using different font specifications, then this gets tricky and markdown might not be the best approach.  
 
 \
 

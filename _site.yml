@@ -1,11 +1,14 @@
-name: "reproducibility-training"
 output_dir: "."
+output:
+  html_document:
+    highlight: pygments
+    toc: true
+    toc_float:
+      collapsed: false
 navbar:
   title: "Reproducible research in R"
   left:
     - text: "Rmarkdown"
       href: rmarkdown.html
-    - text: "Git"
+    - text: "GitHub"
       href: git.html
-output:
-  html_document

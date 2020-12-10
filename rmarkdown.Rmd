@@ -16,7 +16,7 @@ output:
 
 # RStudio
 
-We will be using RStudio both for this Rmarkdown session and also during the GitHub session.  RStudio is currently a very popular Integrated Development Environment (IDE) for working with R.  An IDE is an application used by software developers that faciliates programming by offering source code editing, building and debugging tools all integarated into one application.  To function correctly, RStudio needs R and therefore both need to be installed on your computer.
+We will be using RStudio both for this R Markdown session and also during the GitHub session.  RStudio is currently a very popular Integrated Development Environment (IDE) for working with R.  An IDE is an application used by software developers that faciliates programming by offering source code editing, building and debugging tools all integarated into one application.  To function correctly, RStudio needs R and therefore both need to be installed on your computer.
 
 The RStudio Desktop open-source product is free under the
 [Affero General Public License (AGPL) v3](https://www.gnu.org/licenses/agpl-3.0.en.html).  [Other versions of RStudio](https://www.rstudio.com/products/rstudio/) are also available.
@@ -41,7 +41,7 @@ while developing in R, RStudio will make typing easier and less error-prone.
 
 \ 
 
-# Creating an Rmarkdown project
+# Creating an R Markdown project
 
 Before starting to write code in RStudio, we need to create an R Project.  The idea behind an R project is  to have a workspace where you can keep all the files and settings associated with the project together.  In that way, next time you open the R Project it would be easier to resume work.  To create an R notebook project for the web in RStudio follow the following steps:
 
@@ -113,9 +113,9 @@ directory and only need files within this structure.
 
 \
 
-# Rmarkdown
+# R Markdown
 
-An Rmarkdown file is made up of 3 basic components:
+An R Markdown file is made up of 3 basic components:
 
   - header
   - markdown
@@ -144,7 +144,7 @@ date: 18 February 2020
 
 ## Markdown {#markdown-header}
 
-The text following the header in an Rmarkdown file is in Markdown syntax.  This is the syntax that gets converted to HTML format once we click on the Knit button or the Build website button.  The philosophy behind Markdown is that it should be easy to write and easy to read.  
+The text following the header in an R Markdown file is in Markdown syntax.  This is the syntax that gets converted to HTML format once we click on the Knit button or the Build website button.  The philosophy behind Markdown is that it should be easy to write and easy to read.  
 
 The full documentation of the Markdown syntax can be found at https://pandoc.org/MANUAL.html.  However this can be a bit difficult to follow for beginners, therefore below is a simplified version of the Markdown syntax.
 
@@ -190,7 +190,7 @@ To create a line break, put more than 2 spaces at the end of a sentence or place
 \  
 
 >### Challenge
->Replicate the output of the text below in Rmarkdown.
+>Replicate the output of the text below in R Markdown.
 >The text comes from [a paper by Monya Baker](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970) that was published in 2016 in the Nature journal that triggered the discussion about Reproducibility Crisis.
 !['](img/Exercise1.png)
 > <details>
@@ -524,9 +524,9 @@ See https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html fo
 So far we have not used any R code and all the code we used so far is in Markdown.  As the name suggests, R Markdown files contain Markdown and R.  R Markdown files have a `.Rmd` extension.  Using R in a Markdown document is useful if we want dynamically generated information such as integrating our analysis in our report. Some operations that we might need to do are; loading our dataset, performing some operations on the dataset and displaying results, either in a table or in a plot.  We will be exploring how we can integrate R code in R Markdown in the following worked example.
 
 >1. Create a  new R Markdown document (`File` -> `New File` -> `R Markdown` )
->2. The file created should already contain some RMarkdown code and it should look like this:
+>2. The file created should already contain some R Markdown code and it should look like this:
 >![](img/RMarkdown1.png)
->3. Delete the existing code leaving only the RMarkdown header so that we can start building our code as we go over the worked example.  
+>3. Delete the existing code leaving only the R Markdown header so that we can start building our code as we go over the worked example.  
 >4. Name your R Markdown document as RNotebookExample.Rmd
 
 \  
@@ -585,7 +585,7 @@ A full list of options that can be used in the R code chunks is found [here](htt
 
 ### Chunk label
 
-Most likely you will specify several R code chunks in your RMarkdown file.  It is recommended practice to label each R code chunk.  This will also help navigating your code easily.  At the bottom right of your RStudio you should see the code navigator where you can navigate the different code chunks:
+Most likely you will specify several R code chunks in your R Markdown file.  It is recommended practice to label each R code chunk.  This will also help navigating your code easily.  At the bottom right of your RStudio you should see the code navigator where you can navigate the different code chunks:
 
 ![](img/chunk-menu.png)
 
@@ -629,7 +629,7 @@ If you knit `RNotebookExample.Rmd` again you will see that now only the code is 
 
 \
 
-### Tables in Rmarkdown
+### Tables in R Markdown
 
 When you have a large dataset, creating a table manually in R Markdown as we did [here](#tables) is not really feasible.  Also if you are really trying to make your research reproducible, then, you will need to generate most of the tables dynamically and therefore you will not be able to manually type them in markdown.  This is where R Markdown comes in as there is a way to display tables dynamically. In this course we will look at two ways of displaying tables dynamically, using the functions:
 
@@ -666,7 +666,7 @@ euro_data_tbl %>%
 
 >##### Challenge 
 >
->1. Our table is getting prettier.  Try a few styles with `kable_styling()`. Look at the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Table_Styles) for ideas. After you have tried a few styles, set your R Markdown file to look like [this](RNotebookxample1.Rmd)
+>1. Our table is getting prettier.  Try a few styles with `kable_styling()`. Look at the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html#Table_Styles) for ideas. After you have tried a few styles, set your R Markdown file to look like [this](RNotebookExample1.Rmd)
 >
 >2. Experiment using the different chunk options and see what the output will be link with each option.  Refer to [chunk options section](#chunk-options).
 >
@@ -698,7 +698,7 @@ Adding images is straightforward and does not require using a specific R Markdow
 >
 >\  
 >
->[Link to Answer](RMarkdownExample3.Rmd)
+>[Link to Answer](RNotebookExample3.Rmd)
 
 \  
 
@@ -710,7 +710,7 @@ In reports or publications, sometimes you would need to place two or more figure
 > Draw the `euro_plot` created in the previous challenge next to a `uk_plot` using the `ggarrange()` function.  Label the plots A and B respectively.  
 >
 >\
->[Link to Answer](RMarkdownExample4.Rmd)
+>[Link to Answer](RNotebookExample4.Rmd)
 
 
 

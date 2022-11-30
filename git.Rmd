@@ -150,17 +150,13 @@ Let us do this whole process in action on GitHub! The following steps are the st
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRfSuD6DfkG8LT130neS7tJQPpPz2TxtYkezlm_L0RUcQVyZRyjpI5yKBokxjC7Lg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-\  
 
-When you are working on someone else's repository, you would need to first **fork** the repository, *i.e.,* make a copy of someone else's repository into your account so that you now have the same repository present in your list of repositories. You would then need to go over the GitHub flow.  Below are the steps on how this can be done.  The example shows 2 people working together, one is a Maintainer and one is a Developer.  The roles are maked on the top right hand side of the slides.  Work this example in groups of 2:
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQPhU3xOFvFnb-gNhrW2dotoz7BIcrKaBe6fpTMjvBbp3egSXtZUw9J6UcfwuZV21m_JO4Xd5BtQ0Ne/embed?start=true&loop=true&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 \  
 
 # Git with RStudio
 
-So far we have learned how to do the main GitHub operations directly on GitHub.  We will now will look how we can perform the same operations in RStudio.  Why do you want to do this in RStudio?  If you are writing your code in R, it will make more sense to use the inbuilt RStudio integration of git, in this way you do not need to switch back and forth to GitHub.
+So far we have learned how to do the main GitHub operations directly on GitHub.  We will now look at how we can perform the same operations in RStudio.  Why do you want to do this in RStudio?  If you are writing your code in R, it will make more sense to use the inbuilt RStudio integration of git, in this way you do not need to switch back and forth to GitHub.
 
 Let us use the R Markdown project we produced before.  We would like to, firstly, make a copy of it on GitHub in a new repository, and secondly, we would like to use the git integration in RStudio so that any additional changes we make to it will be easily versioned in GitHub.  To link the exiting RStudio project with GitHub do the following steps:
 
@@ -175,6 +171,9 @@ Let us use the R Markdown project we produced before.  We would like to, firstly
 git config --global user.name "yourGitHubUsername"
 git config --gloabl user.email "name@provider.com"
 ```
+You can check if these are set up properly with 
+```git config --global --list```
+
 6. Next create a repository in GitHub.
 
 ![](img/repo-rstudio.png)
@@ -198,11 +197,13 @@ git branch -M main
 git push -u origin main
 ```
 
-10.  After running these two commands, your username and password might be requested, if so provide them.  To check if the code has been uploaded successfully go to GitHub and check if the respository contains the files that have been pushed.  
+10.  After running these two commands, your username and password might be requested, if so provide your GitHub username as the username and the Personal Access Token as the password.  The Personal Access Token can be generated [here](https://github.com/settings/tokens). Select 'repo' as scope. 
+
+To check if the code has been uploaded successfully go to GitHub and check if the respository contains the files that have been pushed.  
 
 ![](img/github-repo.png)
 
-### Keeping you local code updated on GitHub
+### Keeping your local code updated on GitHub
 
 From now onwards, if you continue making changes in your code in your RStudio project, these will be tracked and you will be able to see the files that had changes in them in the Git tab of RStudio.  You will then be able to commit and push the changes to GitHub so that you have a backup of your code there.
 Let us try to make a few changes in our code and do the process together.
@@ -229,6 +230,12 @@ https://audhalbritter.com/wp-content/uploads/2016/12/Github-%E2%80%93-R-studio-C
 https://www.youtube.com/watch?v=E2d91v1Twcc
 
 -->
+
+# (Optional) Working in a Team
+
+When you are working on someone else's repository, you would need to first **fork** the repository, *i.e.,* make a copy of someone else's repository into your account so that you now have the same repository present in your list of repositories. You would then need to go over the GitHub flow.  Below are the steps on how this can be done.  The example shows 2 people working together, one is a Maintainer and one is a Developer.  The roles are maked on the top right hand side of the slides.  Work this example in groups of 2:
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQPhU3xOFvFnb-gNhrW2dotoz7BIcrKaBe6fpTMjvBbp3egSXtZUw9J6UcfwuZV21m_JO4Xd5BtQ0Ne/embed?start=true&loop=true&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
 

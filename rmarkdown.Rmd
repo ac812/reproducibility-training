@@ -467,6 +467,7 @@ To add a table of contents to your report add the following to the YAML header:
 output:
   html_document:
     toc: true
+    toc_float: true
 ```
 
 By default all headings up to level 3 headings are displayed in the table of contents.  You can adjust this by specifying `toc_depth` as following:
@@ -476,10 +477,11 @@ output:
   html_document:
     toc: true
     toc_depth: 4
+    toc_float: true
 ```
 \
 
-### Adding references
+### (Optional) Adding references
 
 Adding references and citations in Markdown is not as easy as reference manager software such as Mendeley. To be able to create citations you will need to create a bibliography file with all the references in it.  Here is an [example of a bibliography file](references.bib).  The bibligraphy file has to be placed in the same folder as the one where the `.Rmd` file is.  Next, add the following to the YAML header:
 
@@ -694,13 +696,15 @@ Adding images is straightforward and does not require using a specific R Markdow
 
 >#### Challenge
 >
->Create a new dataset `euro_data_fig` by filtering the `pop_data` tibble to contain only data from Europe.  Draw a plot to display the `lifeExp` on the y axis and `year` on the x axis.  Use `geom_violin()` to draw this as a violin plot to show the distrubution of the data across each year and save it in a 1euro_plot` variable.   
+>Create a new dataset `euro_data_fig` by filtering the `pop_data` tibble to contain only data from Europe.  Draw a plot to display the `lifeExp` on the y axis and `year` on the x axis.  Use `geom_violin()` to draw this as a violin plot to show the distrubution of the data across each year and save it in a `euro_plot` variable.   
 >
 >\  
 >
 >[Link to Answer](RNotebookExample3.Rmd)
 
 \  
+
+### Optional
 
 In reports or publications, sometimes you would need to place two or more figures next to each other.  `ggarrage()` is a function present in the `ggpubr` pacakge that can help with this.  The `ggarrange()` function takes as an input the list of plots to plot.  You can specify the number of columns and rows to plot by the ncol and nrow arguments respectively.  Another thing that you might need is a lable for each plot so that you can specify the description in your caption.  Use the labels argument to specify labels.  
 

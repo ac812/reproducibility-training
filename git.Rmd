@@ -62,10 +62,7 @@ The best way to understand this clearly is by seeing this in action and working 
 
 In this section we will use GitHub and manage our project online without using any coding.  
 
-The first step is to create a repository.  The slides below provide step by step instructions on how to do this.
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ0VHWripOuP0wNye8q-HpIHfLGAQSi_QTlrcEAIET8kSx8g3XDY83201-OVg4muCdZIr4-CcQ21iFr/embed?start=false&loop=false&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
+The first step is to create a repository.  [These slides provide step-by-step instructions on how to do this](https://docs.google.com/presentation/d/e/2PACX-1vQ0VHWripOuP0wNye8q-HpIHfLGAQSi_QTlrcEAIET8kSx8g3XDY83201-OVg4muCdZIr4-CcQ21iFr/pub?start=false&loop=false&delayms=3000).
 
 After this example we have now a repository in place where anyone can see the files. 
 
@@ -111,9 +108,7 @@ More information about project boards on GitHub can be found at [https://help.gi
 
 ## Issues
 
-In GitHub, Issues are created to suggest an idea, improvements or keep track of bugs, in other words, it can be viewed as a task list for the project.  The steps involved to create an Issue on GitHub are:
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRAAAzpAWQTFhcSxq4Vtz0Z_XrXam5ZykWXA56BaucHwCjrJeESPyv37yjhD1SGDR1gcw9ac7rA2SUi/embed?start=false&loop=false&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+In GitHub, Issues are created to suggest an idea, improvements or keep track of bugs, in other words, it can be viewed as a task list for the project.  [The steps involved to create an Issue on GitHub are here](http://docs.google.com/presentation/d/e/2PACX-1vRAAAzpAWQTFhcSxq4Vtz0Z_XrXam5ZykWXA56BaucHwCjrJeESPyv37yjhD1SGDR1gcw9ac7rA2SUi/embed?start=false&loop=false&delayms=3000).
 
 \
 
@@ -146,10 +141,7 @@ The GitHub flow steps consist of the following:
 
 * **Merge**: Now that the code and files you have committed have passed all your testing, you can merge the changes to the existing `master` repository so that now they form part of the `master` repository.  The good thing about all this process is that all the changes made during this process are preserved and anyone can track changes made in each merge and why they were made.
 
-Let us do this whole process in action on GitHub! The following steps are the steps required when creating a feature branch in the same repository and then finally merging them to the main repository.
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRfSuD6DfkG8LT130neS7tJQPpPz2TxtYkezlm_L0RUcQVyZRyjpI5yKBokxjC7Lg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
+Let us do this whole process in action on GitHub! [These steps are the steps required when creating a feature branch in the same repository and then finally merging them to the main repository](http://docs.google.com/presentation/d/e/2PACX-1vRfSuD6DfkG8LT130neS7tJQPpPz2TxtYkezlm_L0RUcQVyZRyjpI5yKBokxjC7Lg/embed?start=false&loop=false&delayms=3000).
 
 
 \  
@@ -233,11 +225,7 @@ https://www.youtube.com/watch?v=E2d91v1Twcc
 
 # (Optional) Working in a Team
 
-When you are working on someone else's repository, you would need to first **fork** the repository, *i.e.,* make a copy of someone else's repository into your account so that you now have the same repository present in your list of repositories. You would then need to go over the GitHub flow.  Below are the steps on how this can be done.  The example shows 2 people working together, one is a Maintainer and one is a Developer.  The roles are maked on the top right hand side of the slides.  Work this example in groups of 2:
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQPhU3xOFvFnb-gNhrW2dotoz7BIcrKaBe6fpTMjvBbp3egSXtZUw9J6UcfwuZV21m_JO4Xd5BtQ0Ne/embed?start=true&loop=true&delayms=3000" frameborder="0" width="820" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-
+When you are working on someone else's repository, you would need to first **fork** the repository, *i.e.,* make a copy of someone else's repository into your account so that you now have the same repository present in your list of repositories. You would then need to go over the GitHub flow.  Below are the steps on how this can be done.  The example shows 2 people working together, one is a Maintainer and one is a Developer.  The roles are maked on the top right hand side of the slides.  [Try this example in groups of 2](https://docs.google.com/presentation/d/e/2PACX-1vQPhU3xOFvFnb-gNhrW2dotoz7BIcrKaBe6fpTMjvBbp3egSXtZUw9J6UcfwuZV21m_JO4Xd5BtQ0Ne/embed?start=true&loop=true&delayms=3000).
 
 
 
